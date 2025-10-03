@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi App GAS</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1976d2">
+</head>
+<body style="margin:0; padding:0; height:100vh;">
+  <!-- 👇 CAMBIA el src con tu URL de la app web de GAS -->
+  <iframe 
+    src="https://script.google.com/macros/s/AKfycbxyz1234567890/exec"
+    style="width:100%; height:100vh; border:none;">
+  </iframe>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log("Service Worker registrado"))
+        .catch(err => console.error("Error registrando SW:", err));
+    }
+  </script>
+</body>
+</html>
